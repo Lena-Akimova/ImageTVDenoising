@@ -1,0 +1,61 @@
+﻿<Window x:Class="ImageTVDenoising.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ImageTVDenoising"
+        mc:Ignorable="d"
+        Title="Полное шумоподавление" Height="700" Width="1000">
+    <Grid>
+        <GroupBox Header="Результат" HorizontalAlignment="Left" Height="630" Margin="517,20,0,0" VerticalAlignment="Top" Width="449" RenderTransformOrigin="0.677,-0.143">
+            <Grid Margin="0,0,0,2.667">
+                <Image x:Name="DeNoisedImage1" Height="210" Width="210" Margin="170,43,57.333,0" VerticalAlignment="Top" Source="noisy.jpg"/>
+                <Button x:Name="SaveDeNoise1Btn" Content="Сохранить" HorizontalAlignment="Left" Margin="194,547,0,0" VerticalAlignment="Top" Width="154" Height="20" Click="SaveDeNoise1Btn_Click"/>
+                <Button x:Name="SaveDeNoise2Btn" Content="Сохранить" HorizontalAlignment="Left" Margin="200,265,0,0" VerticalAlignment="Top" Width="154" Height="20" Click="SaveDeNoise2Btn_Click"/>
+                <Image x:Name="DeNoisedImage2" Height="210" Width="210" Margin="167,321,60.333,0" VerticalAlignment="Top" Source="noisy.jpg"/>
+                <GroupBox Header="Метод 1" HorizontalAlignment="Left" Height="218" Margin="21,41,0,0" VerticalAlignment="Top" Width="123">
+                    <Grid Margin="2,0,-0.333,-0.333">
+                        <Label Content="ЦФ" HorizontalAlignment="Left" Margin="6,14,0,0" VerticalAlignment="Top"/>
+                        <TextBox HorizontalAlignment="Left" Height="18" Margin="57,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44"/>
+                        <Label Content="Время" HorizontalAlignment="Left" Margin="5,46,0,0" VerticalAlignment="Top" Width="50"/>
+                        <TextBox HorizontalAlignment="Left" Height="18" Margin="58,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44"/>
+                        <Label Content="Количество&#xD;&#xA; итераций" HorizontalAlignment="Left" Margin="5,74,0,0" VerticalAlignment="Top" Height="49"/>
+                        <TextBox HorizontalAlignment="Left" Height="18" Margin="85,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="16"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Метод 2" HorizontalAlignment="Left" Height="218" Margin="10,322,0,0" VerticalAlignment="Top" Width="137">
+                    <Grid Margin="2,0,-0.333,-0.333">
+                        <Label Content="ЦФ" HorizontalAlignment="Left" Margin="6,14,0,0" VerticalAlignment="Top"/>
+                        <TextBox HorizontalAlignment="Left" Height="18" Margin="57,22,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44"/>
+                        <Label Content="Время" HorizontalAlignment="Left" Margin="5,46,0,0" VerticalAlignment="Top" Width="50"/>
+                        <TextBox HorizontalAlignment="Left" Height="18" Margin="58,53,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44"/>
+                        <Label Content="Количество&#xD;&#xA; итераций" HorizontalAlignment="Left" Margin="5,74,0,0" VerticalAlignment="Top" Height="49"/>
+                        <TextBox HorizontalAlignment="Left" Height="18" Margin="85,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="16"/>
+                    </Grid>
+                </GroupBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="" HorizontalAlignment="Left" Height="630" Margin="18,19,0,0" VerticalAlignment="Top" Width="484" RenderTransformOrigin="0.677,-0.143">
+            <Grid Margin="9,31,-9,-17">
+                <Label Content="Исходное изображение" HorizontalAlignment="Left" Margin="49,19,0,0" VerticalAlignment="Top"/>
+                <Label Content="Зашумленное изображение" HorizontalAlignment="Left" Margin="50,294,0,0" VerticalAlignment="Top"/>
+                <Image x:Name="SourceImage" Height="185" Margin="22,53,209,0" VerticalAlignment="Top" Source="noisy.jpg"/>
+                <Button x:Name="NoiseBtn" Content="Зашумить" HorizontalAlignment="Left" Margin="281,90,0,0" VerticalAlignment="Top" Width="147" Height="22" Click="NoiseBtn_Click"/>
+                <Image x:Name="NoisedImage" Height="189" Margin="11,326,207,0" VerticalAlignment="Top" Source="noisy.jpg"/>
+                <Button x:Name="DenoiseBtn" Content="Убрать шум" HorizontalAlignment="Left" Margin="277,532,0,0" VerticalAlignment="Top" Width="154" Height="20" Click="DenoiseBtn_Click"/>
+                <GroupBox Header="Параметры шумоподавления" HorizontalAlignment="Left" Height="218" Margin="260,300,0,0" VerticalAlignment="Top" Width="176">
+                    <Grid Margin="2,0,-0.333,-0.333">
+
+                        <Label Content="Лямбда" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top"/>
+                        <TextBox x:Name="LambdaTbx" HorizontalAlignment="Left" Height="19" Margin="67,19,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="27"/>
+
+                    </Grid>
+                </GroupBox>
+                <Button x:Name="OpenBtn" Content="Открыть изображение" HorizontalAlignment="Left" Margin="281,54,0,0" VerticalAlignment="Top" Width="145" Height="23" Click="OpenBtn_Click"/>
+                <Button x:Name="SaveNoiseBtn" Content="Сохранить" HorizontalAlignment="Left" Margin="44,532,0,0" VerticalAlignment="Top" Width="154" Height="20" Click="SaveNoiseBtn_Click"/>
+            </Grid>
+
+        </GroupBox>
+
+    </Grid>
+</Window>
